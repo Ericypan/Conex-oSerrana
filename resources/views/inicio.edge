@@ -1,0 +1,188 @@
+@layout('layouts/layout')
+@set('title','Inicio')
+
+@section('body')
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background: url(assets/img/slide/slide-3.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate_animated animate_fadeInDown">Seja bem vindo!</h2>
+                <p class="animate_animated animate_fadeInUp">Conheça a Serra de Santana, um lugar lindo para se
+                  visitar, com belas histórias e paisagens belíssimas</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="background: url(assets/img/slide/slide-2.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate_animated animate_fadeInDown">Municípios</h2>
+                <p class="animate_animated animate_fadeInUp"> Bodó; Cerro Corá; Currais Novos; Florânia; Lagoa Nova;
+                  Santana do Matos; São Tomé; São Vicente e Tenente Laurentino Cruz</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" style="background: url(assets/img/slide/slide-1.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate_animated animate_fadeInDown">Curiosidades</h2>
+                <p class="animate_animated animate_fadeInUp">A Serra de Santana está localizada no estado do Rio
+                  Grande Norte,
+                  tem um amplo potencial turístico em várias dimensões, sendo um local com uma topografia elevada,
+                  chegando a uma altitude de mais de 700 metros em alguns locais.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row no-gutters">
+          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div>
+          <div class="col-xl-7 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch">
+            <div class="content d-flex flex-column justify-content-center">
+              <h3>A Serra de Santana</h3>
+              <p>
+                Aspectos da Serra de Santana:
+              </p>
+              <div class="row">
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-receipt"></i>
+                  <h4>Aspecto Socioeconomico</h4>
+                  <p>A região é grande produtora de energia eólica, hospedando parques eólicos em quase todos os seus
+                    municípios, contudo ela continua sendo grande
+                    produtora de frutas, ramo bem antigo entre sua população. Além de outras
+                    fontes de renda.
+                  </p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-cube-alt"></i>
+                  <h4>Aspecto Cultural</h4>
+                  <p>O aspecto cultural está bem presente na região, sendo decorrente em cada um de seus municípios.
+                  </p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-images"></i>
+                  <h4>Aspecto Turístico</h4>
+                  <p>A serra de santana tem uma grande diversidade de
+                    pontos turistícos que variam entre turismo: de aventura; religioso; historico; e
+                    cultural. Além de um clima com temperatura mais baixa, podendo chegar a 15ºC. </p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-map"></i>
+                  <h4>Aspecto Geográfico</h4>
+                  <p>A Serra de Santana é uma formação geológica de origem Terciária, com altitudes que podem chegar a
+                    mais de 700 metros, encravada entre as regiões do Seridó e Central do estado do Rio Grande do Norte
+                    (RN).
+                  </p>
+                </div>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+
+  </main>
+  <div class="container">
+    <h2>Localização no Mapa</h2>
+  <div class="row gy-4">
+    <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1DmieBPFu-Z-rw8_oZV_pMwHLeLE6KONt" width="700"
+      height="650"></iframe>
+  </div>
+</div>
+
+<section>
+<section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/overlay-bg.jpg)">
+  <div class="overlay-mf"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="contact-mf">
+          <div id="contact" class="box-shadow-full">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="title-box-3">
+                  <h5 class="title-center">
+                    Envie uma Mensagem
+                  </h5>
+                </div>
+                <div>
+                  <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <div class="row">
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <input type="email" class="form-control" name="email" id="email" placeholder="Seu Email" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <textarea class="form-control" name="message" rows="5" placeholder="Mensagem" required></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-12 text-center my-3">
+                        <div class="loading">carregando...</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Sua mensagem foi enviada. Obrigado!</div>
+                      </div>
+                      <div class="col-md-12 text-center">
+                        <button type="submit" class="button button-a button-big button-rouded">Enviar Mensagem</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+@end
+
