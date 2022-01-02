@@ -59,4 +59,8 @@ Route.get('/santana', async ({ view }) => {
 })
 
 
+/* --- PONTOS TURISTICOS DESCRIÇÃO --- */
 
+Route.get('/rotatoria', async ({ view }) => {
+  return view.render('rotatoria')
+})

@@ -493,6 +493,7 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 34px;
+  text-align: justify;
 }
 .about .content p {
   margin-bottom: 0;
@@ -507,7 +508,7 @@ section {
 }
 .about .content .icon-box i {
   font-size: 48px;
-  float: left;
+  float: center;
   color: #5c9f24;
 }
 .about .content .icon-box p {
@@ -516,7 +517,7 @@ section {
   margin-left: 60px;
 }
 .about .image {
-  background: url("../img/about.jpg") center center no-repeat;
+  background: url("../assets/img/about.jpg") center center no-repeat;
   background-size: cover;
   min-height: 400px;
 }
