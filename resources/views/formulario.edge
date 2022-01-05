@@ -1,0 +1,48 @@
+@layout('layouts/admin')
+@set('title','Formulario de Cadastro')
+
+@section('conteudo')
+<h1 class="text-center">Formulário de cadastro</h1>
+
+<form method="post" action="{{ route('salvar') }}">
+    <div class="mb-3">
+        <label for="id" class="form-label">Id</label>
+        <input type="text" class="form-control" id="id" name="id">
+      </div>
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" name="nome">
+    </div>
+    <div class="mb-3">
+      <label for="latitude" class="form-label">Latitude</label>
+      <input type="text" class="form-control" id="latitude" name="latitude">
+    </div>
+    <div class="mb-3">
+        <label for="longitude" class="form-label">Longitude</label>
+        <input type="text" class="form-control" id="longitude" name="longitude">
+      </div>
+
+      <div class="mb-3">
+        <label for="historia" class="form-label">Historia</label>
+        <input type="text" class="form-control" id="historia" name="historia">
+      </div>
+
+      <div class="mb-3">
+        <label for="eventos" class="form-label">Eventos</label>
+        <input type="text" class="form-control" id="eventos" name="eventos">
+      </div>
+
+      <div class="mb-3">
+        <label for="meio_hospedagem" class="form-label">Meios de hospedagem</label>
+        <input type="text" class="form-control" id="meio_hospedagem" name="meio_hospedagem">
+      </div>
+
+      <div class="mb-3">
+        <label for="Ponto_Turistico" class="form-label">Pontos Turisticos</label>
+        <input type="text" class="form-control" id="Ponto_Turistico" name="Ponto_Turistico">
+      </div>
+  
+    <div class="mb-3"><button class="btn btn-success">Salvar</button></div>
+  </form>
+  
+  @end

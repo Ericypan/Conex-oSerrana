@@ -1,0 +1,44 @@
+@layout('layouts/admin')
+@set('title','Lista de Cidades')
+
+@section('conteudo')
+<h1 class="text-center">Lista de Cidades</h1>
+
+<a href="{{ route('formulario')}}" class="btn btn-success">Cadastrar</a>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Historia</th>
+        <th>Eventos</th>
+        <th>Meios de hospedagem</th>
+        <th>Pontos Turisticos</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      @each(cidade in cidades)
+      <tr>
+        <td>{{cidade.id}}</td>
+        <td>{{cidade.nome}}</td>
+        <td>{{cidade.latitude}}</td>
+        <td>{{cidade.longitude}}</td>
+        <td>{{cidade.historia}}</td>
+        <td>{{cidade.eventos}}</td>
+        <td>{{cidade.meio_hospedagem}}</td>
+        <td>{{cidade.Ponto_Turistico}}</td>
+        <td>
+          <a href="{{ route('remover', { id: cidade.id }) }}" onclick="return confirm('Deseja realmente remover essa Cidade?')" class="btn btn-danger">Remover</a>
+          <a href="#" class="btn btn-primary">Alterar</a>
+        </td>
+      </tr>
+      @end
+    </tbody>
+  </table>
+  
+  @end

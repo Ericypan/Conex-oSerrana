@@ -64,3 +64,10 @@ Route.get('/santana', async ({ view }) => {
 Route.get('/rotatoria', async ({ view }) => {
   return view.render('rotatoria')
 })
+
+
+/* --- AREA ADMINISTRATIVA --- */
+
+Route.get('/cidadesadmin' , 'CidadesController.index').as('cidadesadmin');
+Route.get('/cadastrar' , 'CidadesController.formulario').as('formulario');
+Route.get('/cadastrar' , 'CidadesController.salvar').as('salvar');
