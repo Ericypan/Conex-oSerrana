@@ -31,10 +31,11 @@ public async salvar({ request, response }) {
     const cidades = await Municipio.find(params.id)
     if (cidades) {
       //remoção
-      await Municipio.delete()
+      await cidades.delete()
     }
 
     //redirecionamento para a listagem
     response.redirect().toRoute('cidadesadmin');
   }
+
 }

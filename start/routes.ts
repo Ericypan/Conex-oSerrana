@@ -68,6 +68,9 @@ Route.get('/rotatoria', async ({ view }) => {
 
 /* --- AREA ADMINISTRATIVA --- */
 
-Route.get('/cidadesadmin' , 'CidadesController.index').as('cidadesadmin');
+Route.get('/Municipio/Cadastro' , 'CidadesController.index').as('cidadesadmin');
 Route.get('/cadastrar' , 'CidadesController.formulario').as('formulario');
-Route.get('/cadastrar' , 'CidadesController.salvar').as('salvar');
+Route.post('/cadastrar' , 'CidadesController.salvar').as('salvar');
+
+Route.get('/remover/:id','CidadesController.remover').as('remover');
+Route.get('/alterar/:id','CidadesController.alterar').as('alterar');

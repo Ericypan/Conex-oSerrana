@@ -5,20 +5,23 @@ import MeioHospedagem from './MeioHospedagem'
 import PontoTuristico from './PontoTuristico'
 
 export default class Municipio extends BaseModel {
+  public static table = 'municipio'
   @column({ isPrimary: true })
-  public id: number
+
+
+  public  id: number
 
   @column()
-  public nome: string
+  public  nome: string
 
   @column()
-  public latitude: number
+  public  latitude: number
 
   @column()
-  public longitude: number
+  public  longitude: number
 
   @column()
-  public historia: string
+  public  historia: string
 
   @hasMany(() => Evento)
   public eventos: HasMany<typeof Evento>
@@ -27,11 +30,12 @@ export default class Municipio extends BaseModel {
   public meio_hospedagem: HasMany<typeof MeioHospedagem>
 
   @hasMany(() => PontoTuristico)
-  public Ponto_Turistico: HasMany<typeof PontoTuristico>
+  public  Ponto_Turistico: HasMany<typeof PontoTuristico>
 
   @column.dateTime({ autoCreate: true })
-  public createdAt: DateTime
+  public  createdAt: DateTime
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
-  public updatedAt: DateTime
+  public  updatedAt: DateTime
 }
+

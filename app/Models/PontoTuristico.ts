@@ -2,8 +2,10 @@ import { DateTime } from 'luxon'
 import { BaseModel, column, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
 import Foto from 'App/Models/Foto'
 export default class PontoTuristico extends BaseModel {
+  public static table = 'municipio'
   @column({ isPrimary: true })
-  public id: number
+
+  public  id: number
 
   @column()
   public nome: string
@@ -15,11 +17,11 @@ export default class PontoTuristico extends BaseModel {
   public longitude: number
 
   @hasMany(() => Foto)
-  public Foto: HasMany<typeof Foto>
+  public  Foto: HasMany<typeof Foto>
 
   @column.dateTime({ autoCreate: true })
-  public createdAt: DateTime
+  public  createdAt: DateTime
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
-  public updatedAt: DateTime
+  public  updatedAt: DateTime
 }
