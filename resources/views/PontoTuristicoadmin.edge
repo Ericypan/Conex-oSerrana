@@ -1,0 +1,37 @@
+@layout('layouts/admin')
+@set('title','Lista de Pontos Turisticos')
+
+@section('conteudo')
+<h1 class="text-center">Lista de Pontos Turisticos</h1>
+
+<a href="{{ route('formularioPonto')}}" class="btn btn-success">Cadastrar</a>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Foto</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      @each(Ponto in Pontos)
+      <tr>
+        <td>{{Ponto.id}}</td>
+        <td>{{Ponto.nome}}</td>
+        <td>{{Ponto.latitude}}</td>
+        <td>{{Ponto.longitude}}</td>
+        <td>{{Ponto.Foto}}</td>
+        <td>
+          <a href="{{ route('remover', { id: Ponto.id }) }}" onclick="return confirm('Deseja realmente remover esse Ponto Turistico?')" class="btn btn-danger">Remover</a>
+          <a href="{{ route('alterar', { id: Ponto.id }) }}" class="btn btn-primary">Alterar</a>
+        </td>
+      </tr>
+      @end
+    </tbody>
+  </table>
+  
+  @end

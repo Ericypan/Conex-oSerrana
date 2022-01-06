@@ -1,0 +1,24 @@
+@layout('layouts/admin')
+@set('title','Formulario de Cadastro de Categorias')
+
+@section('conteudo')
+<h1 class="text-center">Formulário de Categorias</h1>
+
+<form method="post" action="{{ route('salvarCategoria') }}">
+    <div class="mb-3">
+        <label for="id" class="form-label">Id</label>
+        <input type="text" class="form-control" id="id" name="id">
+      </div>
+    <div class="mb-3">
+      <label for="tipo_turismo" class="form-label">Tipo de Turismo</label>
+      <input type="text" class="form-control" id="tipo_turismo" name="tipo_turismo">
+    </div>
+    <div class="mb-3">
+      <label for="regiao_municipio" class="form-label">Municipio</label>
+      <input type="text" class="form-control" id="regiao_municipio" name="regiao_municipio">
+    </div>
+      
+    <div class="mb-3"><button class="btn btn-success">Salvar</button></div>
+  </form>
+  
+  @end

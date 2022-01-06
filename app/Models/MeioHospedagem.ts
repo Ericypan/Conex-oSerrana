@@ -2,7 +2,9 @@ import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
 export default class MeioHospedagem extends BaseModel {
+
   public static table = 'municipio'
+  
   @column({ isPrimary: true })
 
 
@@ -15,6 +17,9 @@ export default class MeioHospedagem extends BaseModel {
   public latitude: number
 
   @column()
+  public  longitude: number
+
+  @column()
   public  endereco: string
 
   @column()
@@ -23,8 +28,6 @@ export default class MeioHospedagem extends BaseModel {
   @column()
   public whatsapp: string
 
-  @column()
-  public  longitude: number
 
   @column.dateTime({ autoCreate: true })
   public  createdAt: DateTime

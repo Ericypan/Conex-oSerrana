@@ -1,0 +1,33 @@
+@layout('layouts/admin')
+@set('title','Formulario de Cadastro do Ponto Turistico')
+
+@section('conteudo')
+<h1 class="text-center">Formulário de cadastro do Ponto Turistico</h1>
+
+<form method="post" action="{{ route('salvarponto') }}">
+    <div class="mb-3">
+        <label for="id" class="form-label">Id</label>
+        <input type="text" class="form-control" id="id" name="id">
+      </div>
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" name="nome">
+    </div>
+    <div class="mb-3">
+      <label for="latitude" class="form-label">Latitude</label>
+      <input type="text" class="form-control" id="latitude" name="latitude">
+    </div>
+    <div class="mb-3">
+        <label for="longitude" class="form-label">Longitude</label>
+        <input type="text" class="form-control" id="longitude" name="longitude">
+      </div>
+
+      <div class="mb-3">
+        <label for="Foto" class="form-label">Foto</label>
+        <input type="text" class="form-control" id="Foto" name="Foto">
+      </div>
+  
+    <div class="mb-3"><button class="btn btn-success">Salvar</button></div>
+  </form>
+  
+  @end

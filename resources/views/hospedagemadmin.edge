@@ -1,0 +1,41 @@
+@layout('layouts/admin')
+@set('title','Lista de Meios de Hospedagem')
+
+@section('conteudo')
+<h1 class="text-center">Lista de Meios de Hospedagem</h1>
+
+<a href="{{ route('formularioHospedagem')}}" class="btn btn-success">Cadastrar</a>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Endereço</th>
+        <th>instagram</th>
+        <th>Whatsapp</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      @each(Meio in Meios)
+      <tr>
+        <td>{{Meio.id}}</td>
+        <td>{{Meio.nome}}</td>
+        <td>{{Meio.latitude}}</td>
+        <td>{{Meio.longitude}}</td>
+        <td>{{Meio.endereço}}</td>
+        <td>{{Meio.instagram}}</td>
+        <td>{{Meio.whatsapp}}</td>
+        <td>
+          <a href="{{ route('removerHospedagem', { id: Meio.id }) }}" onclick="return confirm('Deseja realmente remover esse Meio de Hospedagem?')" class="btn btn-danger">Remover</a>
+          <a href="{{ route('alterarHospedagem', { id: Meio.id }) }}" class="btn btn-primary">Alterar</a>
+        </td>
+      </tr>
+      @end
+    </tbody>
+  </table>
+  
+  @end

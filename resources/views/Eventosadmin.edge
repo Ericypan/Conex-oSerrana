@@ -1,0 +1,37 @@
+@layout('layouts/admin')
+@set('title','Lista de Eventos')
+
+@section('conteudo')
+<h1 class="text-center">Lista de Eventos</h1>
+
+<a href="{{ route('formularioEvento')}}" class="btn btn-success">Cadastrar</a>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Data</th>
+        <th>Descrição</th>
+        <th>Municipio id</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      @each(evento in Event)
+      <tr>
+        <td>{{evento.id}}</td>
+        <td>{{evento.nome}}</td>
+        <td>{{evento.data}}</td>
+        <td>{{evento.descricao}}</td>
+        <td>{{evento.municipio_id}}</td>
+        <td>
+          <a href="{{ route('removerEvento', { id: evento.id }) }}" onclick="return confirm('Deseja realmente remover esse Meio de Hospedagem?')" class="btn btn-danger">Remover</a>
+          <a href="{{ route('alterarEvento', { id: evento.id }) }}" class="btn btn-primary">Alterar</a>
+        </td>
+      </tr>
+      @end
+    </tbody>
+  </table>
+  
+  @end

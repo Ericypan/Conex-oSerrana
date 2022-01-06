@@ -1,0 +1,33 @@
+@layout('layouts/admin')
+@set('title','Lista de Meios de Hospedagem')
+
+@section('conteudo')
+<h1 class="text-center">Lista de Categorias</h1>
+
+<a href="{{ route('formularioCategorias')}}" class="btn btn-success">Cadastrar</a>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Tipo de Turismo</th>
+        <th>Municipio</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      @each(categoria in categorias)
+      <tr>
+        <td>{{categoria.id}}</td>
+        <td>{{categoria.tipo_turismo}}</td>
+        <td>{{categoria.regiao_municipio}}</td>
+        <td>
+          <a href="{{ route('removerHospedagem', { id: categoria.id }) }}" onclick="return confirm('Deseja realmente remover essa categoria?')" class="btn btn-danger">Remover</a>
+          <a href="{{ route('alterarHospedagem', { id: categoria.id }) }}" class="btn btn-primary">Alterar</a>
+        </td>
+      </tr>
+      @end
+    </tbody>
+  </table>
+  
+  @end

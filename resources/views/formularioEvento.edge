@@ -1,0 +1,33 @@
+@layout('layouts/admin')
+@set('title','Formulario de Cadastro de Eventos')
+
+@section('conteudo')
+<h1 class="text-center">Formulário de Eventos</h1>
+
+<form method="post" action="{{ route('salvarEvento') }}">
+    <div class="mb-3">
+        <label for="id" class="form-label">Id</label>
+        <input type="text" class="form-control" id="id" name="id">
+      </div>
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" name="nome">
+    </div>
+    <div class="mb-3">
+      <label for="data" class="form-label">Data</label>
+      <input type="text" class="form-control" id="data" name="data">
+    </div>
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição</label>
+        <input type="text" class="form-control" id="descricao" name="descricao">
+      </div>
+
+      <div class="mb-3">
+        <label for="municipio_id" class="form-label">Municipio id</label>
+        <input type="text" class="form-control" id="municipio_id" name="municipio_id">
+      </div>
+      
+    <div class="mb-3"><button class="btn btn-success">Salvar</button></div>
+  </form>
+  
+  @end

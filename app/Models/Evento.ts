@@ -2,7 +2,9 @@ import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
 export default class Evento extends BaseModel {
+
   public static table = 'municipio'
+  
   @column({ isPrimary: true })
 
   public  id: number
