@@ -1,5 +1,6 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
+import Municipio from 'App/Models/Municipio'
 
 export default class Evento extends BaseModel {
 
@@ -20,6 +21,9 @@ export default class Evento extends BaseModel {
 
   @column()
   public  municipio_id: number
+
+  @hasMany(() => Municipio)
+  public  Municipio: HasMany<typeof Municipio>
 
   @column.dateTime({ autoCreate: true })
   public  createdAt: DateTime

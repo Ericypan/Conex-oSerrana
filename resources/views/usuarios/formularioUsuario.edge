@@ -1,0 +1,24 @@
+@layout('layouts/admin')
+@set('title','Formulario de Cadastro de Usuarios')
+
+@section('conteudo')
+<h1 class="text-center">Formulário de usuarios</h1>
+
+<form method="post" action="{{ route('usuario_salvar') }}">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" name="id">
+      </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">E-mail</label>
+      <input type="text" class="form-control" id="email" name="email">
+    </div>
+    <div class="mb-3">
+      <label for="senha" class="form-label">Senha</label>
+      <input type="password" class="form-control" id="senha" name="senha">
+    </div>
+      
+    <div class="mb-3"><button class="btn btn-success">Salvar</button></div>
+  </form>
+  
+  @end

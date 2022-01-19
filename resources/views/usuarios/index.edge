@@ -1,0 +1,36 @@
+@layout('layouts/admin')
+@set('title','Lista de usuários')
+
+@section('conteudo')
+
+
+<h1 class="text-center">Lista de Cidades</h1>
+
+<a href="{{ route('usuario_cadastrar')}}" class="btn btn-success">Cadastrar</a>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      @each(usuario in usuarios)
+      <tr>
+        <td>{{usuario.id}}</td>
+        <td>{{usuario.nome}}</td>
+        <td>{{cidade.email}}</td>
+       
+       <td>
+          <a href="{{ route('usuario_remover', { id: cidade.id }) }}" class="btn btn-danger">Remover</a>
+          <a href="{{ route('alterar', { id: remover.id }) }}" class="btn btn-primary">Alterar</a>
+         
+        </td>
+      </tr>
+        @end
+    </tbody>
+@end

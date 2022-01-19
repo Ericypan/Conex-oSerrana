@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
-import Foto from 'App/Models/Foto'
+import Categoria from 'App/Models/Categoria'
+import Municipio from 'App/Models/Municipio'
 export default class PontoTuristico extends BaseModel {
   public static table = 'municipio'
   @column({ isPrimary: true })
@@ -16,8 +17,17 @@ export default class PontoTuristico extends BaseModel {
   @column()
   public longitude: number
 
-  @hasMany(() => Foto)
-  public  Foto: HasMany<typeof Foto>
+  @column()
+  public municipioId: number
+
+  @column()
+  public categoriaId: number
+
+  @hasMany(() => Municipio)
+  public  Municipio: HasMany<typeof Municipio>
+
+  @hasMany(() => Categoria)
+  public  Categoria: HasMany<typeof Categoria>
 
   @column.dateTime({ autoCreate: true })
   public  createdAt: DateTime

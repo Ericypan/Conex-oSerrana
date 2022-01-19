@@ -1,10 +1,10 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
+import PontoTuristico from 'App/Models/PontoTuristico'
 
 export default class Categoria extends BaseModel {
   public static table = 'municipio'
   @column({ isPrimary: true })
-
   public  id: number
 
   @column()
@@ -12,6 +12,9 @@ export default class Categoria extends BaseModel {
 
   @column()
   public regiao_municipio: boolean
+
+  @hasMany(() => PontoTuristico)
+  public  Ponto_Turistico: HasMany<typeof PontoTuristico>
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime

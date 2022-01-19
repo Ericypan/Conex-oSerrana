@@ -110,3 +110,10 @@ Route.post('/cadastrar/Categoria' , 'CategoriasController.salvarCategoria').as('
 
 Route.get('/removerCategoria/:id','CategoriasController.remover').as('removerCategoria');
 Route.get('/alterarCategoria/:id','CategoriasController.alterar').as('alterarCategoria');
+
+
+//CRUD usuarios
+Route.get('/usuario','UsuariosController.index').as('usuario_index');
+Route.get('/usuario/cadastrar','UsuariosController.formularioUsuario').as('usuario_cadastrar');
+Route.post('/usuario/cadastrar','UsuariosController.salvar').as('usuario_salvar');
+Route.get('/usuario/:id/remover','UsuariosController.remover').as('usuario_remover');

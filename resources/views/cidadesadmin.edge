@@ -14,9 +14,7 @@
         <th>Latitude</th>
         <th>Longitude</th>
         <th>Historia</th>
-        <th>Eventos</th>
-        <th>Meios de hospedagem</th>
-        <th>Pontos Turisticos</th>
+        
         <th>Ações</th>
       </tr>
     </thead>
@@ -29,12 +27,16 @@
         <td>{{cidade.latitude}}</td>
         <td>{{cidade.longitude}}</td>
         <td>{{cidade.historia}}</td>
-        <td>{{cidade.eventos}}</td>
-        <td>{{cidade.meio_hospedagem}}</td>
-        <td>{{cidade.Ponto_Turistico}}</td>
+        
         <td>
           <a href="{{ route('remover', { id: cidade.id }) }}" onclick="return confirm('Deseja realmente remover essa Cidade?')" class="btn btn-danger">Remover</a>
           <a href="{{ route('alterar', { id: cidade.id }) }}" class="btn btn-primary">Alterar</a>
+          <a href="{{ route('PontoTuristicoadmin')}}" class="btn btn-info">Gerenciar Pontos Turisticos</a>
+          <a href="{{ route('Eventoadmin')}}" class="btn btn-secondary">Gerenciar Evento</a>
+          <a href="{{ route('Hospedagemadmin')}}" class="btn btn-warning">Gerenciar Hospedagem</a>
+
+
+
         </td>
       </tr>
       @end
