@@ -1,0 +1,8 @@
+@layout('layouts/admin')
+@set('title','Erro de permissão')
+
+@section('conteudo')
+<h1>Erro de permissão</h1>
+
+<p class="alert alert-danger">Você não tem autorização para executar essa ação!!</p>
+@end
