@@ -13,21 +13,21 @@
         <th>Nome</th>
         <th>Data</th>
         <th>Descrição</th>
-        <th>Municipio id</th>
+        <th>Municipio</th>
       </tr>
     </thead>
   
     <tbody>
-      @each(evento in Event)
+      @each(evento in eventos)
       <tr>
         <td>{{evento.id}}</td>
         <td>{{evento.nome}}</td>
         <td>{{evento.data}}</td>
         <td>{{evento.descricao}}</td>
-        <td>{{evento.municipio_id}}</td>
+        <td>{{evento.municipioId}}</td>
         <td>
-          <a href="{{ route('removerEvento', { id: evento.id }) }}" onclick="return confirm('Deseja realmente remover esse Meio de Hospedagem?')" class="btn btn-danger">Remover</a>
-          <a href="{{ route('alterarEvento', { id: evento.id }) }}" class="btn btn-primary">Alterar</a>
+          <a href="{{ route('removerEvento', { id: evento.id }) }}" onclick="return confirm('Deseja realmente remover esse Evento?')" class="btn btn-danger">Remover</a>
+          <a href="{{ route('AlterarEventos', { id: evento.id }) }}" class="btn btn-primary">Alterar</a>
         </td>
       </tr>
       @end

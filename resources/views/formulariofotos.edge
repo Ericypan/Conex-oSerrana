@@ -1,0 +1,19 @@
+@layout('layouts/admin')
+@set('title','Formulario de Fotos')
+
+@section('conteudo')
+<h1 class="text-center">Formulário de Fotos</h1>
+
+  
+<form method="POST" action="upload" enctype="multipart/form-data">
+
+  <div class="mb-3">
+    <label for="PontoTuristico_id" class="form-label">Foto</label>
+  <input type="file" name="PontoTuristico_id" multiple />
+
+
+    <div class="mb-3"><button class="btn btn-success">Salvar</button></div>
+  </form>
+  
+  @end
+

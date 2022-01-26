@@ -1,0 +1,40 @@
+<form method="post" action="{{ action }}">
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="nome"  value = "{{ hospedagem ? hospedagem.nome : ""}}" name="nome">
+  </div>
+  <div class="mb-3">
+    <label for="latitude" class="form-label">Latitude</label>
+    <input type="text" class="form-control" id="latitude" value = "{{ hospedagem ? hospedagem.latitude : ""}}" name="latitude">
+  </div>
+  <div class="mb-3">
+      <label for="longitude" class="form-label">Longitude</label>
+      <input type="text" class="form-control" id="longitude" value = "{{ hospedagem ? hospedagem.longitude : ""}}" name="longitude">
+    </div>
+
+    <div class="mb-3">
+      <label for="endereco" class="form-label">Endereço</label>
+      <input type="text" class="form-control" id="endereco" value = "{{ hospedagem ? hospedagem.endereco : ""}}" name="endereco">
+    </div>
+
+    <div class="mb-3">
+      <label for="instagram" class="form-label">Instagram</label>
+      <input type="text" class="form-control" id="instagram" value = "{{ hospedagem ? hospedagem.instagram : ""}}" name="instagram">
+    </div>
+
+    <div class="mb-3">
+      <label for="whatsapp" class="form-label">Whatsapp</label>
+      <input type="text" class="form-control" id="whatsapp" value = "{{ hospedagem ? hospedagem.whatsapp : ""}}" name="whatsapp">
+    </div>
+    
+    <div class="mb-3">
+      <label for="municipio_id" class="form-label">Municipio </label>
+      <select class="form-select" name="municipio_id" aria-label="Default select example">
+        @each(municipio in municipios)
+        <option value="{{ municipio.nome }}">{{ hospedagem && municipio.nome == municipio.nome ? "selected" : "" }}{{ municipio.nome }}</option>
+        @end
+      </select>
+    </div>
+
+  <div class="mb-3"><button class="btn btn-success">Salvar</button></div>
+</form>

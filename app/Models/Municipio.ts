@@ -8,7 +8,6 @@ export default class Municipio extends BaseModel {
   public static table = 'municipio'
   @column({ isPrimary: true })
 
-
   public  id: number
 
   @column()

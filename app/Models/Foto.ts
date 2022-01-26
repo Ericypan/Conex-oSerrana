@@ -4,7 +4,7 @@ import PontoTuristico from 'App/Models/PontoTuristico'
 
 export default class Foto extends BaseModel {
   
-  public static table = 'municipio'
+  public static table = 'foto'
 
   @column({ isPrimary: true })
 
@@ -12,6 +12,12 @@ export default class Foto extends BaseModel {
 
   @column()
   public PontoTuristicoId: number
+
+  @column()
+  public EventosId: number
+
+  @column()
+  public MeioHospedagemId: number
 
   @hasMany(() => PontoTuristico)
   public  PontoTuristico: HasMany<typeof PontoTuristico>

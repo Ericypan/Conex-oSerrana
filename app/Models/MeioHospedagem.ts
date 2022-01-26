@@ -4,7 +4,7 @@ import Municipio from 'App/Models/Municipio'
 
 export default class MeioHospedagem extends BaseModel {
 
-  public static table = 'municipio'
+  public static table = 'meio_hospedagem'
   
   @column({ isPrimary: true })
 
@@ -31,6 +31,9 @@ export default class MeioHospedagem extends BaseModel {
 
   @column()
   public municipioId: number
+
+  @column()
+  public fotoid: number
 
   @hasMany(() => Municipio)
   public  Municipio: HasMany<typeof Municipio>

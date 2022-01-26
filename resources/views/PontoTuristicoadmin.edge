@@ -13,7 +13,9 @@
         <th>Nome</th>
         <th>Latitude</th>
         <th>Longitude</th>
-        <th>Foto</th>
+        <th>Sobre</th>
+        <th>Tipo de Turismo</th>
+        <th>Municipio</th>
       </tr>
     </thead>
   
@@ -24,10 +26,12 @@
         <td>{{Ponto.nome}}</td>
         <td>{{Ponto.latitude}}</td>
         <td>{{Ponto.longitude}}</td>
-        <td>{{Ponto.Foto}}</td>
+        <td>{{Ponto.sobre}}</td>
+        <td>{{Ponto.categoriaId}}</td>
+        <td>{{Ponto.municipioId}}</td>
         <td>
-          <a href="{{ route('remover', { id: Ponto.id }) }}" onclick="return confirm('Deseja realmente remover esse Ponto Turistico?')" class="btn btn-danger">Remover</a>
-          <a href="{{ route('alterar', { id: Ponto.id }) }}" class="btn btn-primary">Alterar</a>
+          <a href="{{ route('removerponto', { id: Ponto.id }) }}" onclick="return confirm('Deseja realmente remover esse Ponto Turistico?')" class="btn btn-danger">Remover</a>
+          <a href="{{ route('AlterarPonto', { id: Ponto.id }) }}" class="btn btn-primary">Alterar</a>
         </td>
       </tr>
       @end

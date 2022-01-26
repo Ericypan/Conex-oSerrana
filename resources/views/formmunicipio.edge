@@ -1,0 +1,23 @@
+
+
+<form method="post" action="{{ action }}">
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="nome"  value = "{{ municipio ? municipio.nome : ""}}" name="nome">
+  </div>
+  <div class="mb-3">
+    <label for="latitude" class="form-label">Latitude</label>
+    <input type="text" class="form-control" id="latitude"  value = "{{ municipio? municipio.latitude : ""}}" name="latitude">
+  </div>
+  <div class="mb-3">
+      <label for="longitude" class="form-label">Longitude</label>
+      <input type="text" class="form-control" id="longitude"  value = "{{ municipio ? municipio.longitude : ""}}" name="longitude">
+    </div>
+
+    <div class="mb-3">
+      <label for="historia" class="form-label">Historia</label>
+      <textarea name="historia" class="form-control"> {{ municipio ? municipio.historia : ""}}</textarea>
+    </div>
+
+  <div class="mb-3"><button class="btn btn-success">Salvar</button></div>
+</form>

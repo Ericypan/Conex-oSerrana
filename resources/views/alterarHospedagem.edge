@@ -1,8 +1,8 @@
 @layout('layouts/admin')
-@set('title','Formulario de Cadastro de Meios de Hospedagem')
+@set('title','Formulario de Alterar Ponto Turistico')
 
 @section('conteudo')
-<h1 class="text-center">Formulário de cadastro de Meios de Hospedagem</h1>
+<h1 class="text-center">Alterar Categoria</h1>
 
 @if(flashMessages.has('errors.nome'))
 <div class="alert alert-danger alert-dismissible fade show">
@@ -48,8 +48,12 @@
 </div>
 
 @end
-  @!component('formhospedagem' , {
-    action: route('salvarHospedagem'),
-    municipios
-  })
+
+@!component('formhospedagem' , {
+  action: route('AlterarHospedagem' , {
+    id: hospedagem.id
+  }),
+  municipios,
+  hospedagem
+})
   @end

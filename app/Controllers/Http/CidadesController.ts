@@ -13,14 +13,12 @@ public async index({ view }) {
     });
 }
 public async formulario({ view }) {
-
     return view.render('formulario');
-
 }
 
 public async salvar({ request, response }) {
     await Municipio.create(
-      request.only(['id','nome','latitude','longitude','historia','eventos','meio_hospedagem','Ponto_Turistico'])
+      request.only(['id','nome','latitude','longitude','historia','eventos'])
     );
 
     response.redirect().toRoute('cidadesadmin');
@@ -35,6 +33,27 @@ public async salvar({ request, response }) {
     }
 
     //redirecionamento para a listagem
+    response.redirect().toRoute('cidadesadmin');
+  }
+
+  public async AlterarMunicipio({ view, params, response }) {
+    const municipio = await Municipio.find(params.id);
+    if (municipio) {
+      return view.render('alterarMunicipio',{
+        municipio
+      });
+    }
+
+    response.redirect().back();
+  }
+
+ public async alterarmunicipio({params, request, response }){
+    const municipio = await Municipio.find(params.id)
+
+    if(municipio){
+      municipio.merge(request.only(['nome','latitude','longitude','historia']))
+      municipio.save()
+    }
     response.redirect().toRoute('cidadesadmin');
   }
 

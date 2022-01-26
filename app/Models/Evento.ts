@@ -4,7 +4,7 @@ import Municipio from 'App/Models/Municipio'
 
 export default class Evento extends BaseModel {
 
-  public static table = 'municipio'
+  public static table = 'evento'
   
   @column({ isPrimary: true })
 
@@ -20,7 +20,7 @@ export default class Evento extends BaseModel {
   public  descricao: string
 
   @column()
-  public  municipio_id: number
+  public  municipioId: number
 
   @hasMany(() => Municipio)
   public  Municipio: HasMany<typeof Municipio>

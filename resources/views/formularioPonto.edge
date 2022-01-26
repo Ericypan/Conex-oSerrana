@@ -4,30 +4,40 @@
 @section('conteudo')
 <h1 class="text-center">Formulário de cadastro do Ponto Turistico</h1>
 
-<form method="post" action="{{ route('salvarponto') }}">
-    <div class="mb-3">
-        <label for="id" class="form-label">Id</label>
-        <input type="text" class="form-control" id="id" name="id">
-      </div>
-    <div class="mb-3">
-      <label for="nome" class="form-label">Nome</label>
-      <input type="text" class="form-control" id="nome" name="nome">
-    </div>
-    <div class="mb-3">
-      <label for="latitude" class="form-label">Latitude</label>
-      <input type="text" class="form-control" id="latitude" name="latitude">
-    </div>
-    <div class="mb-3">
-        <label for="longitude" class="form-label">Longitude</label>
-        <input type="text" class="form-control" id="longitude" name="longitude">
-      </div>
+@if(flashMessages.has('errors.nome'))
+<div class="alert alert-danger alert-dismissible fade show">
+{{ flashMessages.get('errors.latitude') }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@end
+@if(flashMessages.has('errors.longitude'))
+<div class="alert alert-danger alert-dismissible fade show">
+{{ flashMessages.get('errors.longitude') }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@end
+@if(flashMessages.has('errors.latitude'))
+<div class="alert alert-danger alert-dismissible fade show">
+{{ flashMessages.get('errors.latitude') }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@end
+@if(flashMessages.has('errors.categoria_id'))
+<div class="alert alert-danger alert-dismissible fade show">
+{{ flashMessages.get('errors.categoria_id') }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@end
+@if(flashMessages.has('errors.municipio_id'))
+<div class="alert alert-danger alert-dismissible fade show">
+{{ flashMessages.get('errors.municipio_id') }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@end
 
-      <div class="mb-3">
-        <label for="Foto" class="form-label">Foto</label>
-        <input type="text" class="form-control" id="Foto" name="Foto">
-      </div>
-  
-    <div class="mb-3"><button class="btn btn-success">Salvar</button></div>
-  </form>
-  
+  @!component('formponto' , {
+    action: route('salvarPonto'),  
+    categorias,
+    municipios
+  })
   @end

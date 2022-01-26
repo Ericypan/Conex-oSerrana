@@ -1,31 +1,32 @@
 @layout('layouts/admin')
-@set('title','Formulario de Cadastro de Eventos')
+@set('title','Formulario de Alterar Ponto Turistico')
 
 @section('conteudo')
-<h1 class="text-center">Formulário de Eventos</h1>
+<h1 class="text-center">Alterar Categoria</h1>
 
 @if(flashMessages.has('errors.nome'))
 <div class="alert alert-danger alert-dismissible fade show">
-{{ flashMessages.get('errors.nome') }}
+{{ flashMessages.get('errors.latitude') }}
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
-@end
-@if(flashMessages.has('errors.descricao'))
-<div class="alert alert-danger alert-dismissible fade show">
-{{ flashMessages.get('errors.descricao') }}
+{{ flashMessages.get('errors.longitude') }}
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
-@end
-@if(flashMessages.has('errors.municipio_id'))
-<div class="alert alert-danger alert-dismissible fade show">
+{{ flashMessages.get('errors.categoria_id') }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 {{ flashMessages.get('errors.municipio_id') }}
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
+
 @end
 
-@!component('formeventos' , {
-  action: route('salvarEventos'),  
+@!component('formponto' , {
+  action: route('AlterarPonto' , {
+    id: ponto.id
+  }),
   municipios,
+  categorias,
+  ponto
 })
-  
   @end

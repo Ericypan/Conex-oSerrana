@@ -7,33 +7,22 @@
 
 @if(flashMessages.has('errors.nome'))
 <div class="alert alert-danger alert-dismissible fade show">
-{{ flashMessages.get('errors.nome') }}
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-
-@if(flashMessages.has('errors.latitude'))
-<div class="alert alert-danger alert-dismissible fade show">
 {{ flashMessages.get('errors.latitude') }}
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
-
-@if(flashMessages.has('errors.longitude'))
-<div class="alert alert-danger alert-dismissible fade show">
 {{ flashMessages.get('errors.longitude') }}
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
-
-@if(flashMessages.has('errors.historia'))
-<div class="alert alert-danger alert-dismissible fade show">
 {{ flashMessages.get('errors.historia') }}
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 
-
 @end
 
 @!component('formmunicipio' , {
-  action: route('salvar')
+  action: route('AlterarMunicipio' , {
+    id: municipio.id
+  }),
+  municipio
 })
-  
-@end
+  @end

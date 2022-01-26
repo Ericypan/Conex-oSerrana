@@ -72,16 +72,18 @@ Route.get('/cadastrar/Cidade' , 'CidadesController.formulario').as('formulario')
 Route.post('/cadastrar/Cidade' , 'CidadesController.salvar').as('salvar').middleware('auth');
 
 Route.get('/remover/:id','CidadesController.remover').as('remover').middleware('auth');
-Route.get('/alterar/:id','CidadesController.alterar').as('alterar').middleware('auth');
+Route.get('/alterarMunicipio/:id','CidadesController.AlterarMunicipio').as('AlterarMunicipio').middleware('auth');
+Route.post('/alterarMunicipio/:id','CidadesController.alterarmunicipio').as('alterarmunicipio').middleware('auth');
 
 /* --- AREA ADMINISTRATIVA Ponto Turistico --- */
 
 Route.get('/PontoTuristico/Cadastro' , 'PontoTuristicoController.index').as('PontoTuristicoadmin').middleware('auth');
 Route.get('/cadastrar/Ponto' , 'PontoTuristicoController.formularioPonto').as('formularioPonto').middleware('auth');
-Route.post('/cadastrar/Ponto' , 'PontoTuristicoController.salvarponto').as('salvarponto').middleware('auth');
+Route.post('/cadastrar/Ponto' , 'PontoTuristicoController.salvarPonto').as('salvarPonto').middleware('auth');
 
 Route.get('/removerponto/:id','PontoTuristicoController.remover').as('removerponto').middleware('auth');
-Route.get('/alterarponto/:id','PontoTuristicoController.alterar').as('alterarponto').middleware('auth');
+Route.get('/alterarPonto/:id','PontoTuristicoController.AlterarPonto').as('AlterarPonto').middleware('auth');
+Route.post('/alterarPonto/:id','PontoTuristicoController.alterarponto').as('alterarponto').middleware('auth');
 
 /* --- AREA ADMINISTRATIVA Meios de Hospedagem --- */
 
@@ -90,16 +92,18 @@ Route.get('/cadastrar/Hospedagem' , 'MeioHospedagemController.formularioHospedag
 Route.post('/cadastrar/Hospedagem' , 'MeioHospedagemController.salvarHospedagem').as('salvarHospedagem').middleware('auth');
 
 Route.get('/removerHospedagem/:id','MeioHospedagemController.remover').as('removerHospedagem').middleware('auth');
-Route.get('/alterarHospedagem/:id','MeioHospedagemController.alterar').as('alterarHospedagem').middleware('auth');
+Route.get('/alterarHospedagem/:id','MeioHospedagemController.AlterarHospedagem').as('AlterarHospedagem').middleware('auth');
+Route.post('/alterarHospedagem/:id','MeioHospedagemController.alterarhospedagem').as('alterarhospedagem').middleware('auth');
 
 /* --- AREA ADMINISTRATIVA Eventos--- */
 
-Route.get('/Eventos/Cadastro' , 'EventosController.index').as('Eventoadmin').middleware('auth');
+Route.get('/Eventos/Cadastro' , 'EventosController.index').as('Eventosadmin').middleware('auth');
 Route.get('/cadastrar/Evento' , 'EventosController.formularioEvento').as('formularioEvento').middleware('auth');
-Route.post('/cadastrar/Evento' , 'EventosController.salvarEvento').as('salvarEvento').middleware('auth');
+Route.post('/cadastrar/Evento' , 'EventosController.salvarEventos').as('salvarEventos').middleware('auth');
 
 Route.get('/removerEvento/:id','EventosController.remover').as('removerEvento').middleware('auth');
-Route.get('/alterarEvento/:id','EventosController.alterar').as('alterarEvento').middleware('auth');
+Route.get('/alterarEventos/:id','EventosController.AlterarEventos').as('AlterarEventos').middleware('auth');
+Route.post('/alterarEventos/:id','EventosController.alterareventos').as('alterareventos').middleware('auth');
 
 
 /* --- AREA ADMINISTRATIVA Categorias--- */
@@ -109,8 +113,17 @@ Route.get('/cadastrar/Categoria' , 'CategoriasController.formularioCategorias').
 Route.post('/cadastrar/Categoria' , 'CategoriasController.salvarCategoria').as('salvarCategoria').middleware('auth');
 
 Route.get('/removerCategoria/:id','CategoriasController.remover').as('removerCategoria').middleware('auth');
-Route.get('/alterarCategoria/:id','CategoriasController.alterar').as('alterarCategoria').middleware('auth');
+Route.get('/alterarCategoria/:id','CategoriasController.AlterarCategoria').as('AlterarCategoria').middleware('auth');
+Route.post('/alterarCategoria/:id','CategoriasController.alterarcategorias').as('alterarcategoria').middleware('auth');
 
+/* --- AREA ADMINISTRATIVA Fotos--- */
+Route.get('/Fotos/Adicionar' , 'FotosController.index').as('fotosadmin').middleware('auth');
+Route.get('/adicionar/Foto' , 'FotosController.formularioFotos').as('formulariofotos').middleware('auth');
+Route.post('/adicionar/Foto' , 'FotosController.salvarFotos').as('salvarFotos').middleware('auth');
+
+Route.get('/removerFoto/:id','FotosController.remover').as('removerFoto').middleware('auth');
+Route.get('/alterarFoto/:id','FotosController.AlterarFotos').as('AlterarFotos').middleware('auth');
+Route.post('/alterarFoto/:id','FotosController.alterarfotos').as('alterarfotos').middleware('auth');
 
 //CRUD usuarios
 Route.group(() => {
@@ -128,3 +141,4 @@ Route.group(() => {
 }).prefix('/auth')
 
 
+/* --- AREA ADMINISTRATIVA Fotos--- */

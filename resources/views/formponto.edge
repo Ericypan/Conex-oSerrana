@@ -1,0 +1,39 @@
+<form method="post" action="{{ action }}">
+
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="nome" value = "{{ ponto ? ponto.nome : ""}}" name="nome">
+  </div>
+  <div class="mb-3">
+    <label for="latitude" class="form-label">Latitude</label>
+    <input type="text" class="form-control" id="latitude" value = "{{ ponto ? ponto.latitude : ""}}" name="latitude">
+  </div>
+  <div class="mb-3">
+      <label for="longitude" class="form-label">Longitude</label>
+      <input type="text" class="form-control" id="longitude" value = "{{ ponto ? ponto.longitude : ""}}" name="longitude">
+    </div>
+    <div class="mb-3">
+      <label for="sobre" class="form-label">Sobre</label>
+      <textarea name="sobre" class="form-control"> {{ ponto ? ponto.sobre : ""}}</textarea>
+    </div>
+    <div class="mb-3">
+      <label for="categoria_id" class="form-label">Tipo de Ponto Turistico</label>
+      <select class="form-select" name="categoria_id" aria-label="Default select example">
+        @each(categoria in categorias)
+        <option value="{{ categoria.tipo_turismo }}">{{ ponto && categoria.tipo_turismo == categoria.tipo_turismo ? "selected" : "" }}{{ categoria.tipo_turismo }}</option>
+        @end
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="municipio_id" class="form-label">Municipio </label>
+      <select class="form-select" name="municipio_id" aria-label="Default select example">
+        @each(municipio in municipios)
+        <option value="{{ municipio.nome }}">{{ ponto && municipio.nome == municipio.nome ? "selected" : "" }}{{ municipio.nome }}</option>
+        @end
+      </select>
+    </div>
+
+
+  <div class="mb-3"><button class="btn btn-success">Salvar</button></div>
+</form>

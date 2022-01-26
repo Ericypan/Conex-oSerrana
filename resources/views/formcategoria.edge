@@ -1,0 +1,8 @@
+
+<form method="post" action="{{ action }}">
+    <div class="mb-3">
+      <label for="tipo_turismo" class="form-label">Tipo de Turismo</label>
+      <input type="text" class="form-control" id="tipo_turismo" value = "{{ categorias ? categorias.tipo_turismo : ""}}" name="tipo_turismo">
+    </div>
+    <div class="mb-3"><button class="btn btn-success">Salvar</button></div>
+  </form>

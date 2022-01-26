@@ -1,20 +1,21 @@
 @layout('layouts/admin')
-@set('title','Formulario de Cadastro de Categorias')
+@set('title','Formulario de Alterar Categoria')
 
 @section('conteudo')
-<h1 class="text-center">Formulário de Categorias</h1>
-
+<h1 class="text-center">Alterar Categoria</h1>
 
 @if(flashMessages.has('errors.tipo_turismo'))
 <div class="alert alert-danger alert-dismissible fade show">
-{{ flashMessages.get('errors.tipo_turismo') }}
+{{ flashMessages.get('errors.titulo') }}
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
+
 @end
 
-
 @!component('formcategoria' , {
-  action: route('salvarCategoria')
+  action: route('AlterarCategoria' , {
+    id: categorias.id
+  }),
+  categorias
 })
-  
   @end

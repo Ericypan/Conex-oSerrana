@@ -6,10 +6,10 @@ export default class CategoriasController {
 
     public async index({ view }) {
 
-        const categoria  = await Categoria.all();
+        const categorias  = await Categoria.all(); 
     
         return view.render('Categoriasadmin', {
-            categoria : categoria  
+            categorias 
         });
     }
     public async formularioCategorias({ view }) {
@@ -19,21 +19,43 @@ export default class CategoriasController {
     }
     public async salvarCategoria({ request, response }) {
         await Categoria.create(
-          request.only(['id','tipo_turismo','regiao_municipio'])
+          request.only(['id','tipo_turismo'])
         );
     
         response.redirect().toRoute('Categoriasadmin');
       }
-      public async removerCategoria({ params, response }) {
+      public async remover({ params, response }) {
         //busca da notícia que deseja-se remover
     
-        const categoria = await Categoria.find(params.id)
-        if (categoria) {
+        const categorias = await Categoria.find(params.id)
+        if (categorias) {
           //remoção
-          await categoria.delete()
+          await categorias.delete()
         }
     
         //redirecionamento para a listagem
-        response.redirect().toRoute('Eventosadmin');
+        response.redirect().toRoute('Categoriasadmin');
+      }
+
+
+      public async AlterarCategoria({ view, params, response }) {
+        const categorias  = await Categoria.find(params.id);
+        if (categorias) {
+          return view.render('alterarCategoria',{
+            categorias
+          });
+        }
+    
+        response.redirect().back();
+      }
+    
+     public async alterarcategorias({params, request, response }){
+        const categorias = await Categoria.find(params.id)
+
+        if(categorias){
+          categorias.merge(request.only(['tipo_turismo']))
+          categorias.save()
+        }
+        response.redirect().toRoute('Categoriasadmin');
       }
 }

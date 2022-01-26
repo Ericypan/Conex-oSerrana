@@ -1,0 +1,25 @@
+<form method="post" action="{{ action }}">
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="nome" value = "{{ evento ? evento.nome : ""}}" name="nome">
+  </div>
+  <div class="mb-3">
+    <label for="data" class="form-label">Data</label>
+    <input type="text" class="form-control" id="data" value = "{{ evento ? evento.data : ""}}"  name="data">
+  </div>
+  <div class="mb-3">
+      <label for="descricao" class="form-label">Descrição</label>
+      <input type="text" class="form-control" id="descricao" value = "{{ evento ? evento.descricao : ""}}"  name="descricao">
+    </div>
+
+    <div class="mb-3">
+      <label for="municipio_id" class="form-label">Municipio </label>
+      <select class="form-select" name="municipio_id" aria-label="Default select example">
+        @each(municipio in municipios)
+        <option value="{{ municipio.nome }}">{{ evento && municipio.nome == municipio.nome ? "selected" : "" }}{{ municipio.nome }}</option>
+        @end
+      </select>
+    </div>
+    
+  <div class="mb-3"><button class="btn btn-success">Salvar</button></div>
+</form>

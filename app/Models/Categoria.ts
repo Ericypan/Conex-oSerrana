@@ -3,7 +3,7 @@ import { BaseModel, column, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
 import PontoTuristico from 'App/Models/PontoTuristico'
 
 export default class Categoria extends BaseModel {
-  public static table = 'municipio'
+  public static table = 'categoria'
   @column({ isPrimary: true })
   public  id: number
 
@@ -21,4 +21,6 @@ export default class Categoria extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public  updatedAt: DateTime
+  static id: any
+  static tipo_turismo: any
 }

@@ -1,0 +1,31 @@
+@layout('layouts/admin')
+@set('title','Lista de Fotos')
+
+@section('conteudo')
+<h1 class="text-center">Lista de Fotos</h1>
+
+<a href="{{ route('formulariofotos')}}" class="btn btn-success">Adicionar nova imagem</a>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Fotos</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      @each(foto in fotos)
+      <tr>
+        <td>{{foto.id}}</td>
+        <td>{{foto.PontoTuristicoId}}</td>
+        <td>
+          <a href="{{ route('remover', { id: foto.id }) }}" onclick="return confirm('Deseja realmente remover essa Cidade?')" class="btn btn-danger">Remover</a>
+          <a href="{{ route('AlterarFoto', { id: foto.id }) }}" class="btn btn-primary">Alterar</a>
+
+
+        </td>
+      </tr>
+      @end
+    </tbody>
+  </table>
+  @end
