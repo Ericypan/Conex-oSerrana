@@ -22,6 +22,15 @@ export default class Municipio extends BaseModel {
   @column()
   public  historia: string
 
+  @column()
+  public  eventosId: number
+
+  @column()
+  public  pontoTuristicoId: number
+
+  @column()
+  public  peioHospedagemId: number
+
   @hasMany(() => Evento)
   public eventos: HasMany<typeof Evento>
 

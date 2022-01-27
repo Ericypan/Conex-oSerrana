@@ -13,11 +13,6 @@ export default class Foto extends BaseModel {
   @column()
   public PontoTuristicoId: number
 
-  @column()
-  public EventosId: number
-
-  @column()
-  public MeioHospedagemId: number
 
   @hasMany(() => PontoTuristico)
   public  PontoTuristico: HasMany<typeof PontoTuristico>

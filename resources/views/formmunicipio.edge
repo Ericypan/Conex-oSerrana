@@ -19,5 +19,24 @@
       <textarea name="historia" class="form-control"> {{ municipio ? municipio.historia : ""}}</textarea>
     </div>
 
+    <div class="mb-3">
+      <label for="eventos_id" class="form-label">Eventos</label>
+      <select class="form-select" name="eventos_id" aria-label="Default select example">
+        @each(evento in eventos)
+        <option value="{{ evento.nome }}">{{ municipio && evento.nome == evento.nome ? "selected" : "" }}{{ evento.nome }}</option>
+        @end
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="ponto_turistico_id" class="form-label">Pontos Turisticos </label>
+      <select class="form-select" name="ponto_turistico_id" aria-label="Default select example">
+        @each(ponto in pontos)
+        <option value="{{ ponto.nome }}">{{ municipio && ponto.nome == ponto.nome ? "selected" : "" }}{{ ponto.nome }}</option>
+        @end
+      </select>
+    </div>
+
+
   <div class="mb-3"><button class="btn btn-success">Salvar</button></div>
 </form>

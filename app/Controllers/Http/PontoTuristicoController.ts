@@ -24,6 +24,7 @@ const municipios = await Municipio.all();
     });
 
 }
+
 public async salvarPonto({ request, response }) {
     await PontoTuristico.create(
       request.only(['id','nome','latitude','longitude','sobre','categoria_id' , 'municipio_id'])
