@@ -18,6 +18,9 @@
 
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
 
   <!-- Vendor CSS Files -->
   <link href="../vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -55,14 +58,14 @@
           <li class="dropdown"><a href="#"><span>Pontos Turistícos</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               @each(categoria in categorias)
-               <li><a class="nav-link text-uppercase text-expanded" href="{{ route('cidade', { id: categoria.id }) }}">{{ categoria.tipo_turismo }}</a></li>
+               <li><a class="nav-link text-uppercase text-expanded" href="{{ route('sobrecategoria', { id: categoria.id }) }}">{{ categoria.tipo_turismo }}</a></li>
                @end
             </ul>
           </li>
           </li>
 
           </li>
-          <li><a class="nav-link scrollto" href="hospedagem">Meios de Hospedagem</a></li>
+          <li><a class="nav-link scrollto" href="{{ route('hospedagem') }}">Meios de Hospedagem</a></li>
           </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -89,6 +92,11 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin="">
+  
+  </script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

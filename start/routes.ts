@@ -93,3 +93,12 @@ Route.get('/inicio','LayoutsController.inicio').as('inicio');
 
 
 Route.get('/:id/cidade','LayoutsController.Exibircidade').as('cidade');
+Route.get('/hospedagem','LayoutsController.Exibirhospedagem').as('hospedagem');
+Route.get('/:id/sobreponto','LayoutsController.Exibirsobreponto').as('sobreponto');
+Route.get('/:id/sobrecategoria','LayoutsController.Exibirsobrecategoria').as('sobrecategoria');
+
+
+
+/* --- COMENTARIOS--- */
+
+Route.post('inicio/cadastar-comentario','ComentariosController.cadastrarComentario').as('cadastrar-comentario');

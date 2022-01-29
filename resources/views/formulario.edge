@@ -30,9 +30,25 @@
 </div>
 
 @end
+@if(flashMessages.has('errors.eventos_id'))
+<div class="alert alert-danger alert-dismissible fade show">
+{{ flashMessages.get('errors.eventos_id') }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@end
+
+@if(flashMessages.has('errors.ponto_turistico_id'))
+<div class="alert alert-danger alert-dismissible fade show">
+{{ flashMessages.get('errors.ponto_turistico_id') }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@end
 
 @!component('formmunicipio' , {
-  action: route('salvar')
+  action: route('salvar'),
+  pontos,
+  eventos,
+  hospedagem
 })
   
 @end

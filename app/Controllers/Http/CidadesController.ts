@@ -10,6 +10,7 @@ public async index({ view }) {
 
     const cidades = await Municipio.all();
 
+    
     return view.render('cidadesadmin', {
         cidades
     });

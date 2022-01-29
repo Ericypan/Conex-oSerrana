@@ -13,6 +13,9 @@ export default class Categoria extends BaseModel {
   @column()
   public regiao_municipio: boolean
 
+  @column()
+  public pontoTuristicoId: number
+
   @hasMany(() => PontoTuristico)
   public  Ponto_Turistico: HasMany<typeof PontoTuristico>
 

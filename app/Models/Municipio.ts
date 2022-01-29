@@ -29,7 +29,7 @@ export default class Municipio extends BaseModel {
   public  pontoTuristicoId: number
 
   @column()
-  public  peioHospedagemId: number
+  public  meioHospedagemId: number
 
   @hasMany(() => Evento)
   public eventos: HasMany<typeof Evento>

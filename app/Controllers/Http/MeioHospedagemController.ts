@@ -25,7 +25,7 @@ export default class MeioHospedagemController {
     
         response.redirect().toRoute('Hospedagemadmin');
       }
-      public async removerHospedagem({ params, response }) {
+      public async remover({ params, response }) {
         //busca da notícia que deseja-se remover
     
         const Meios = await MeioHospedagem.find(params.id)

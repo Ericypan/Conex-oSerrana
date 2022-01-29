@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, hasOne, HasOne } from '@ioc:Adonis/Lucid/Orm'
 import Categoria from 'App/Models/Categoria'
 import Municipio from 'App/Models/Municipio'
 import Foto from 'App/Models/Foto'
@@ -27,14 +27,14 @@ export default class PontoTuristico extends BaseModel {
   @column()
   public categoriaId: number
 
-  @hasMany(() => Municipio)
-  public  Municipio: HasMany<typeof Municipio>
+  @hasOne(() => Municipio)
+  public  Municipio: HasOne<typeof Municipio>
 
-  @hasMany(() => Categoria)
-  public  Categoria: HasMany<typeof Categoria>
+  @hasOne(() => Categoria)
+  public  Categoria: HasOne<typeof Categoria>
 
-  @hasMany(() => Foto)
-  public  foto: HasMany<typeof Foto>
+  @hasOne(() => Foto)
+  public  foto: HasOne<typeof Foto>
 
   @column.dateTime({ autoCreate: true })
   public  createdAt: DateTime

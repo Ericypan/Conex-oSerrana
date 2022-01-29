@@ -59,19 +59,21 @@
   <section id="event-list" class="event-list">
     <div class="container">
       <div class="row">
-        @each(evento in cidades.eventos)
+        @each(evento in eventos)
+        @if(evento.municipioId == cidades.id)
         <div class="col-md-6 d-flex align-items-stretch">
           <div class="card">
             <div class="card-img">
-              <img src="assets/img/events-1.jpg" alt="...">
+              <img src="../assets/img/events-1.jpg" alt="...">
             </div>
             <div class="card-body">
-              <h5 class="card-title">{{cidades.evento.nome}}</h5>
-              <p class="fst-italic text-center">{{cidades.evento.data}}</p>
-              <p class="card-text">{{cidades.evento.descricao}}</p>
+              <h5 class="card-title">{{evento.nome}}</h5>
+              <p class="fst-italic text-center">{{evento.data}}</p>
+              <p class="card-text">{{evento.descricao}}</p>
             </div>
           </div>
         </div>
+        @end
         @end
       </div>
 
@@ -84,26 +86,29 @@
 
 
   <section>
-    @each(ponto in cidades.pontos)
+    @each(categoria in categorias)
     <div class="container">
       <div class="section-title">
-        <h2>{{ cidades.ponto.categoriaId }}</h2>
+        <h2>{{ categoria.tipo_turismo }}</h2>
       </div>
+    @each(ponto in pontos)
+    @if(categoria.id == ponto.categoriaId)
+        @if(ponto.municipioId == cidades.id)
       <div class="row">
-
-        <div class="col-lg-6">
-          
+        <div class="col-lg-4">
           <div class="member d-flex align-items-center">
-            <div class="pic"><img src="assets/img/pontos/alto.png" class="img-fluid" alt=""></div>
+            <div class="pic"><img src="assets/img/slide/slide-3.jpg" class="img-fluid" alt=""></div>
             <div class="member-info">
-              <h4>{{ cidades.ponto.nome }}</h4>
-              <a href="rotatoria.html"><span>clique para saber mais</span></a>
+              <h4>{{ ponto.nome }}</h4>
+              <a href="{{ route('sobreponto', { id: ponto.id }) }}"><span>clique para saber mais</span></a>
             </div>
           </div>
-        </div>
-
       </div>
+      </div>
+      @end
+      @end
     </div>
+    @end
     @end
   </section>
 

@@ -121,62 +121,39 @@
 </div>
 
 <section>
-<section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/overlay-bg.jpg)">
-<div class="overlay-mf"></div>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="contact-mf">
-        <div id="contact" class="box-shadow-full">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="title-box-3">
-                <h5 class="title-center">
-                  Envie uma Mensagem
-                </h5>
-              </div>
-              <div>
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                  <div class="row">
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" required>
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Seu Email" required>
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto" required>
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <textarea class="form-control" name="message" rows="5" placeholder="Mensagem" required></textarea>
-                      </div>
-                    </div>
-                    <div class="col-md-12 text-center my-3">
-                      <div class="loading">carregando...</div>
-                      <div class="error-message"></div>
-                      <div class="sent-message">Sua mensagem foi enviada. Obrigado!</div>
-                    </div>
-                    <div class="col-md-12 text-center">
-                      <button type="submit" class="button button-a button-big button-rouded">Enviar Mensagem</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
+  <form>
+  <div class="comentarios">
+    <div class="row">
+    @each(comentario in comentarios)
+      <div class="col-md-4 col-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{comentario.nome}}</h5>
+            <p class="card-text">{{comentario.conteudo}}</p>
           </div>
-        </div>
+        </div>  
       </div>
+    @end
     </div>
   </div>
-</div>
-</section>
+  
+  
+  <h3>Envie seu comentário</h3>
+  <form method="post" action="{{ route('cadastrar-comentario') }}">
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" name="nome" id="nome" class="form-control" />
+    </div>
+  
+    <div class="mt-2">
+      <label>Comentário</label>
+      <textarea name="conteudo" class="form-control"></textarea>
+    </div>
+  
+    <div class="mt-2">
+      <button class="btn btn-success">Enviar</button>
+    </div>
+  </form>
 </section>
 
 @end

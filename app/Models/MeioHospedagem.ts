@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, hasOne, HasOne } from '@ioc:Adonis/Lucid/Orm'
 import Municipio from 'App/Models/Municipio'
 
 export default class MeioHospedagem extends BaseModel {
@@ -35,8 +35,8 @@ export default class MeioHospedagem extends BaseModel {
   @column()
   public fotoid: number
 
-  @hasMany(() => Municipio)
-  public  Municipio: HasMany<typeof Municipio>
+  @hasOne(() => Municipio)
+  public  Municipio: HasOne<typeof Municipio>
 
   @column.dateTime({ autoCreate: true })
   public  createdAt: DateTime

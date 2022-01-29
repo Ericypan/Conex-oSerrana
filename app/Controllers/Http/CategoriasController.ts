@@ -19,7 +19,7 @@ export default class CategoriasController {
     }
     public async salvarCategoria({ request, response }) {
         await Categoria.create(
-          request.only(['id','tipo_turismo'])
+          request.only(['id','tipo_turismo','ponto_turistico_id'])
         );
     
         response.redirect().toRoute('Categoriasadmin');
@@ -53,7 +53,7 @@ export default class CategoriasController {
         const categorias = await Categoria.find(params.id)
 
         if(categorias){
-          categorias.merge(request.only(['tipo_turismo']))
+          categorias.merge(request.only(['tipo_turismo','ponto_tursitico_id']))
           categorias.save()
         }
         response.redirect().toRoute('Categoriasadmin');

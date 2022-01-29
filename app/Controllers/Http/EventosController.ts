@@ -54,7 +54,7 @@ export default class EventosController {
         response.redirect().back();
       }
     
-     public async alterarevento({params, request, response }){
+     public async alterareventos({params, request, response }){
         const evento = await Evento.find(params.id)
     
         if(evento){

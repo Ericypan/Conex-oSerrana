@@ -16,7 +16,7 @@
       <label for="municipio_id" class="form-label">Municipio </label>
       <select class="form-select" name="municipio_id" aria-label="Default select example">
         @each(municipio in municipios)
-        <option value="{{ municipio.nome }}">{{ evento && municipio.nome == municipio.nome ? "selected" : "" }}{{ municipio.nome }}</option>
+        <option value="{{ municipio.id }}">{{ evento && municipio.nome == municipio.nome ? "selected" : "" }}{{ municipio.nome }}</option>
         @end
       </select>
     </div>
